@@ -1,0 +1,10 @@
+# Site settings
+title: WIP site
+email: jl653@kent.ac.uk
+description: > # WIP blog and site about life and some of my projects
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+github_username:  josephling
+
+# Build settings
+markdown: kramdown
