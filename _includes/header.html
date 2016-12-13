@@ -16,11 +16,20 @@
       <div class="trigger">
         {% for page in site.pages %}
           {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            <script>
+              console.log("{{page.title}}");
+            </script>
           {% endif %}
+          
         {% endfor %}
         {% for category in site.categories %}
-        <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ category | first }}</a>
+          {% if category %}
+            <script>
+                console.log("{{category | first}}");
+              </script>
+            <a class="page-link" href="{{prepend: site.baseurl }}">{{ category | first }}</a>
+          {% endif %}
         {% endfor %}
       </div>
     </nav>
