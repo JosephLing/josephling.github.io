@@ -239,9 +239,10 @@
 * Side bar
 */
 .sidebar {
-    padding-right: 5px;
-    width: 20%;
-    background-color: red;
+    // padding-right: 5px;
+    // width: 20%;
+    float: left;
+    // background-color: red;
 }
 .sidebar-link{
     display: block;
