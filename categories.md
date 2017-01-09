@@ -29,7 +29,7 @@ permalink: /category/
 <script type="text/javascript">
         var url = window.location.href;
         console.log(window.location.href);
-        var loc = window.location.href.search("#");
+        var loc = window.location.href.search("=");
         if (loc != -1){
             var divId = url.slice(loc+1, url.length);
             var displayId = document.getElementById(divId);

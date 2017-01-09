@@ -246,6 +246,13 @@
 .sidebar {
     // padding-right: 5px;
     // width: 20%;
+    
+    @include media-query($on-laptop) {
+        display: block;
+    }
+    @include media-query($on-nonlaptop){
+        display: none;
+    }
     float: left;
      height: calc(100vh - 50px);
     // background-color: red;

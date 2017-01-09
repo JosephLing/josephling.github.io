@@ -1,7 +1,5 @@
 <header class="site-header">
-
   <div class="wrapper">
-
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
     <nav class="site-nav">
@@ -16,10 +14,12 @@
       <div class="trigger">
         {% for page in site.pages %}
           {% if page.title %}
-            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-            <script>
-              console.log("{{page.title}}");
-            </script>
+            {% if page.title != "Categories" %}
+              <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+              <script>
+                console.log("{{page.title}}");
+              </script>
+            {% endif %}
           {% endif %}
           
         {% endfor %}
@@ -28,12 +28,10 @@
             <script>
                 console.log("{{category | first}}");
               </script>
-            <a class="page-link" href="{{prepend: site.baseurl }}">{{ category | first }}</a>
+            <a class="page-link" href="{{ site.baseurl }}/category?type={{ category | first }}">{{ category | first }}</a>
           {% endif %}
         {% endfor %}
       </div>
     </nav>
-
   </div>
-
 </header>
