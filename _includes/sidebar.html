@@ -1,19 +1,25 @@
 <div class="sidebar">
     <div class="wrapper">
-       <ul id="sidebar-list">
+       <div class="sidebar-list">
          Recent posts:
-         {% for post in site.posts limit:3%}
-                {% if post.title %}
-                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-                {% endif %}
-          {% endfor %}
-      </ul>
-      <ul id="sidebar-list">
-         Tags: 
-         {% for cat in site.tags %}
-                <li>{{ cat | first }}</li>
+          <ul>
+            
+            {% for post in site.posts limit:3%}
+                    {% if post.title %}
+                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    {% endif %}
               {% endfor %}
-      </ul>
+          </ul>
+       </div>
+       <div class="sidebar-list">
+          Tags: 
+          <ul> 
+          {% for cat in site.tags %}
+                  <li>{{ cat | first }}</li>
+                {% endfor %}
+          </ul>
+       </div>
+      
     </div>
 </div>
 
