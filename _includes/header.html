@@ -14,20 +14,14 @@
       <div class="trigger">
         {% for page in site.pages %}
           {% if page.title %}
-            {% if page.title != "Categories" %}
+            {% if page.title != "Categories" and page.title != "Tags" %}
               <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-              <script>
-                console.log("{{page.title}}");
-              </script>
             {% endif %}
           {% endif %}
           
         {% endfor %}
         {% for category in site.categories %}
           {% if category %}
-            <script>
-                console.log("{{category | first}}");
-              </script>
             <a class="page-link" href="{{ site.baseurl }}/category?type={{ category | first }}">{{ category | first }}</a>
           {% endif %}
         {% endfor %}

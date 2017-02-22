@@ -35,39 +35,8 @@ permalink: /category/
 
 {% endfor %}
   </div>
+</div>
+<script src="../main.js"></script>
 <script type="text/javascript">
-        function submitButtonChecked(nameOfId){
-            var buttonId = document.getElementById("button"+nameOfId);
-            if (buttonId === null || buttonId == null){
-                console.log("error in grabbing element");
-            }else{
-                buttonId.style.backgroundColor = "black";
-                buttonId.style.color = "white";
-            }
-        }
-        var url = window.location.href;
-        var loc = window.location.href.search("=");
-        if (loc != -1){ //                              checks if ?type= exists 
-            var divId = url.slice(loc+1, url.length);
-            if(divId == "all") {
-                submitButtonChecked("All");
-            } else {
-                var displayId = document.getElementById(divId);
-                if (displayId != null ){ //             check if it is a valid category
-                    var getCategories = document.getElementById("category-list").getElementsByTagName("div");
-                    for(var i = 0; i < getCategories.length; i++) {
-                        if (divId === getCategories[i].id){
-                            getCategories[i].style.display = "all";
-                        }else{
-                            getCategories[i].style.display = "none";
-                        }
-                    }
-                    submitButtonChecked(divId);
-                }
-            }
-        }else{
-            // No category has been selected so we are displaying all values. 
-            // Therefore 'All' button should be checked.
-            submitButtonChecked("All");
-        }
+filterOptions("category-list");
 </script>
