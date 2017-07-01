@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>testing client side js filtering</title>
+        <script src="test.js"></script>
+        <style>
+    
+        #checked{
+            background-color: blue;
+        }
+    </style>
+    </head>
+    <body>
+        hello world
+         <script>
+                var div_output = "<div id='category-list'>";
+                var options_output = "";
+                var list = ["cat", "dog", "bob","foo", "bar"];
+                for(var i=0; i<list.length; i++){
+                    if (list[i] != null){
+                        div_output += "<div class='list' id='"+list[i]+"'>"+i+"</div>";
+                        // to support IE 8 < we are hard coding the onClick...
+                        // might revert to adding event to all elements with the class 'categoryButton' though...
+                        options_output += "<button class='categoryButton' value='"+list[i]+"' onclick='OnButtonClick(this);'>"+list[i]+"</button>";
+                    }
+                }
+                options_output += "<button class='categoryButton' value='reset' onclick='displayCategories("+'"reset"'+");'>reset</button>";
+                div_output += "</div>";
+                document.write(options_output);
+                document.write(div_output);
+            </script>
+    </body>
+</html>
