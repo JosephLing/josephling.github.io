@@ -14,7 +14,7 @@
       <div class="trigger">
         {% for page in site.pages %}
           {% if page.title %}
-            {% if page.title != "Categories" and page.title != "Tags" %}
+            {% if page.titlebar and page.titlebar != "" %}
               <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
             {% endif %}
           {% endif %}
