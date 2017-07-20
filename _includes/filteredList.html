@@ -1,0 +1,8 @@
+<div id="categories-selection">
+    <script src="../filterList.js"></script>
+    
+    {% for category in include.filterList %}
+        <button class='categoryButton' value='{{ category | first }}' onclick='OnButtonClick(this)'>{{category | first}}</button>
+    {% endfor %}
+    <button class='categoryButton' value='reset' onclick='OnButtonClick(this)'>reset</button>
+</div>
