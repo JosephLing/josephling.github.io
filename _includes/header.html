@@ -12,14 +12,15 @@
       </a>
 
       <div class="trigger">
+        
         {% for page in site.pages %}
           {% if page.title %}
             {% if page.titlebar and page.titlebar != "" %}
-              <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
             {% endif %}
           {% endif %}
-          
         {% endfor %}
+        
         {% for category in site.categories %}
           {% if category %}
             <a class="page-link" href="{{ site.baseurl }}/category?type={{ category | first }}">{{ category | first }}</a>

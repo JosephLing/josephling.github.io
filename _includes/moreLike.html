@@ -1,12 +1,12 @@
 <p>{{include.title}}</p>
 <table id="MorePostsTable">
     <tr>
-        {% for post in page.posts_recent %}
+        {% for post in page.posts_recent:inclue.limit %}
         <td class="linkToPage"><a href="{{ post.url }}">{{ post.title }}</a><br>{{post.description}}</td>
         {% endfor %}
     </tr>
     <tr>
-        {% for post in page.posts_like_tags %}
+        {% for post in page.posts_like_tags limit:inclue.limit %}
         <td class="linkToPage"><a href="{{ post.url }}">{{ post.title }}</a><br>{{post.description}}</td>
         {% endfor %}
     </tr>

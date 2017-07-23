@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 #
 # TODO
-#
+# rewrite as a filter {{ site.tags | theFilter:3}}
+# could potentailly see if we could do {{% assign list = site | theTagFilter | thePostFilter %}}
+
 
 class PostMoreLike < Jekyll::Generator
   # TODO: remove own post; make this actually useful (randomised, multiple tags?

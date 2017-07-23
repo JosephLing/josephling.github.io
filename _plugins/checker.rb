@@ -1,11 +1,21 @@
 module Jekyll
-    Jekyll::Hooks.register :pages, :pre_render do |a, b|
-        puts "---------------------------------"
-        puts a.class
-        puts a.url
-        puts a.data
-        puts "---------------------------------"
-        puts "----------------------------------"
-        # a.content = a.content.gsub("\n\n", "")
+   
+
+    log = -> posts, name {
+        space = 50 - posts.url.length 
+        if space <= 0
+            space = 1
+        end
+        puts "%s: %s%s\tLines:%s" % [name, posts.url, " " * space , posts.to_s.lines.count]
+    } 
+    
+
+    Jekyll::Hooks.register :pages, :pre_render do |pages|
+        log.call(pages, "Page")
     end
+
+    Jekyll::Hooks.register :posts, :pre_render do |posts|
+        log.call(posts, "Post")
+    end
+
 end
