@@ -31,13 +31,22 @@
         display: none;
     }
 
-    .page-link {
+    .link {
         color: $text-color;
         line-height: $base-line-height;
+    }
 
+    .link.page{
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
             margin-left: 20px;
+        }
+    }
+
+    .link.cat{
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+            margin-left: 10px;
         }
     }
 
