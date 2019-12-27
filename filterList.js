@@ -1,8 +1,8 @@
 //check whether or not css can do this when it is selected or not.....
 
-var list = "category-list";
-var BUTTONS = "categoryButton";
-var RESET = "reset"
+let list = "category-list";
+const BUTTONS = "categoryButton";
+const RESET = "reset"
 
 function setList(newList){
     list = newList;
@@ -10,9 +10,9 @@ function setList(newList){
 
 //used for when we load the page and we need to validate whether or the ?=option is a valid button
 function submitButtonChecked(nameOfId){
-    var buttons = document.getElementsByClassName(BUTTONS);
-    var found = false;
-    var count = 0;
+    const buttons = document.getElementsByClassName(BUTTONS);
+    let found = false;
+    let count = 0;
     while (!found && count<buttons.length){
         if (buttons[count].value == nameOfId){
             found = true;
@@ -28,15 +28,14 @@ function submitButtonChecked(nameOfId){
 
 // filters the dispaly of everything in class='list'
 function displayCategories(divId){
-    var getCategories = document.getElementsByClassName("list");
+    const getCategories = document.getElementsByClassName("list");
     if (getCategories.length != 0){
         if (divId == RESET){
-            for(var i = 0; i < getCategories.length; i++) {
+            for(let i = 0; i < getCategories.length; i++) {
                 getCategories[i].style.display = "block";
             }
         }else{
-            for(var i = 0; i < getCategories.length; i++) {
-                console.log(getCategories[i].id);
+            for(let i = 0; i < getCategories.length; i++) {
                 if (divId === getCategories[i].id){
                     getCategories[i].style.display = "block";
                 }else{
@@ -44,10 +43,7 @@ function displayCategories(divId){
                 }
             }
         }
-    }else{
-        console.log("nothing found in list");
     }
-    
 }
 
 // this runs when you press a button.
@@ -63,9 +59,8 @@ function OnButtonClick(element){
 
 // sets button to checked and flips the rest
 function setButtonToChecked(element){
-    console.log("checking")
-    var buttons = document.getElementsByClassName(BUTTONS);
-    for(var i=0; i<buttons.length; i++){
+    const buttons = document.getElementsByClassName(BUTTONS);
+    for(let i=0; i<buttons.length; i++){
         buttons[i].removeAttribute("id"); // O(N) complexity a bit slow but can potentailly speed up later
     }
     element.setAttribute("id", "checked");
@@ -73,13 +68,13 @@ function setButtonToChecked(element){
 
 // this runs when the page loads
 function OnPageLoadFilter(){
-    var url = window.location.href;
-    var loc = window.location.href.search("=");
+    const url = window.location.href;
+    const loc = window.location.href.search("=");
     if (loc != -1){ //                              checks if ?type= exists 
-        var option = url.slice(loc+1, url.length);
+        const option = url.slice(loc+1, url.length);
         displayCategories(option);
         if (!submitButtonChecked(option)){
-            console.log("error in setting check box")
+            console.error("error in setting check box")
         }
     }
 }
