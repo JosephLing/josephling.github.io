@@ -6,7 +6,6 @@ titlebar: false
 ---
 <div id="archives">
 
-{% include filteredList.html filterList=site.categories %}
 
  <div id="category-list">
 <!-- so what we do here is generate all the categories with there content and their description from the _data/categories.yml file-->
@@ -14,7 +13,7 @@ titlebar: false
 
     {% capture category_name %}{{ category | first }}{% endcapture %}
     <div id="{{ category_name | slugize }}" class='list'>
-        <h3 class="category-head">{{ category_name }}</h3>
+        <h3 class="sub-head">{{ category_name }}</h3>
         {% if site.data.categories[category_name] %}
            {{ site.data.categories[category_name] }}
         {% else %}

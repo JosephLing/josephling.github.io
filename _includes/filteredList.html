@@ -1,8 +1,11 @@
-<div id="categories-selection">
-    <script src="../filterList.js"></script>
-    
-    {% for category in include.filterList %}
-        <button class='categoryButton' value='{{ category | first }}' onclick='OnButtonClick(this)'>{{category | first}}</button>
-    {% endfor %}
-    <button class='categoryButton' value='reset' onclick='OnButtonClick(this)'>reset</button>
-</div>
+<header class="post-header categories-selection">
+    <h1 class="post-title">{{ page.title }}</h1>
+
+    <script src="../filterList.js" title="{{include.title}}"></script>
+    <span class="post-meta">
+        select:{% for category in include.filterList %}
+        <span class='categoryButton' onclick='OnButtonClick(this)'>{{ category | first }}</span>
+        {% endfor %}
+        <span class='categoryButton' onclick='OnButtonClick(this)'>all</span>
+    </span> 
+</header>
