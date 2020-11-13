@@ -2,7 +2,6 @@
 layout: page
 title: Categories
 permalink: /category/
-titlebar: false
 ---
 <div id="archives">
 

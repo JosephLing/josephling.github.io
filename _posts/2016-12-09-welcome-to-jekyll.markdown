@@ -3,7 +3,6 @@ layout: post
 title:  "paragraph testing"
 date:   2016-12-9 08:35:48
 categories: testing
-description: "latin"
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar consequat mi, vitae porttitor turpis venenatis et. Nam sit amet lacinia orci, at sodales neque. Vestibulum est arcu, tempor sed orci eleifend, lobortis tempor lacus. Sed tempus aliquet arcu in lobortis. Vivamus eros dolor, volutpat et mollis a, pretium id orci. Sed eu bibendum augue. Fusce ultrices mi pharetra, faucibus lectus sit amet, bibendum risus.
 

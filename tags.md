@@ -2,7 +2,6 @@
 layout: page
 title: Tags
 permalink: /tags/
-titlebar: false
 ---
 
 <div id="archives">
